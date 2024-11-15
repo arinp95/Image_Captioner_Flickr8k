@@ -27,7 +27,7 @@ ResNet50:
 LSTM:
 - The image features extracted by ResNet50 are fed into an LSTM network.
 - The LSTM network processes the sequential data and generates a caption by predicting the next word at each timestep based on the context of previous words.
-- 
+
 ![1_laH0_xXEkFE0lKJu54gkFQ](https://github.com/user-attachments/assets/1578a3bd-54bf-4d92-83aa-1a1d95758a8f)
 
 ### Methodology for Image Captioning
