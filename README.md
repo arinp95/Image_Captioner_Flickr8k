@@ -40,15 +40,13 @@ LSTM:
 - Encoder: The ResNet50 model acts as the encoder, extracting features from input images.
 - Decoder: The LSTM model acts as the decoder, generating captions word by word based on the encoded features.
 
-![LSTM](https://github.com/user-attachments/assets/3491b532-4f9e-4938-9cd5-b5ff47b2aee7)
-
-![Screenshot 2024-11-12 000157](https://github.com/user-attachments/assets/60f05d9e-e948-45db-ae66-4fd52fc2e761)
+![Screenshot 2024-11-16 000258](https://github.com/user-attachments/assets/bf272a9f-251e-4f8c-a43c-769727dca131)
 
 3. Training & Optimization
 - Train the model for several epochs, optimizing for loss using techniques such as EarlyStopping and ModelCheckpoint.
 - Evaluate the model's performance using standard captioning metrics like BLEU-1 and BLEU-2.
 
-![Screenshot 2024-11-15 231829](https://github.com/user-attachments/assets/0800fd87-9b83-41cb-a46b-9af1c8029b19)
+![Screenshot 2024-11-16 000400](https://github.com/user-attachments/assets/208a5925-db14-4bcd-8785-bf338ca471ce)
 
 4. Frontend
 - A Streamlit frontend is provided for generating captions from new images. This allows users to interact with the trained model easily.
@@ -58,6 +56,6 @@ The model was trained for 20 epochs and achieved the following:
 - BLEU-1 Score: 0.5607
 - BLEU-2 Score: 0.3421
 
-![Screenshot 2024-11-12 005408](https://github.com/user-attachments/assets/f472f987-3481-4e11-b1a6-be6cf724808d)
+![Screenshot 2024-11-16 000734](https://github.com/user-attachments/assets/ba6577d6-23b6-4a93-9368-8cabfec0360e)
 
-![Screenshot 2024-11-12 005516](https://github.com/user-attachments/assets/f7240430-05d6-43c9-9a7c-eeecefc30d37)
+![Screenshot 2024-11-16 000907](https://github.com/user-attachments/assets/2f0c685d-95c3-4b9f-9858-2fa00ed7771d)
