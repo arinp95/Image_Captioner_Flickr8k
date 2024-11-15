@@ -45,5 +45,6 @@ The entire system is trained end-to-end, meaning both ResNet50 and LSTM are fine
 4. Frontend
 - User interface using streamlit.
 ## Results:
-- The Resnet50-LSTM model was trained for 20 epochs, achieving a low training loss of 2.5493.
-- Evaluated the model using the BLEU score, with a focus on BLEU-1 score (0.560692).
+The model was trained for 20 epochs and achieved the following:
+- Training Loss: 2.5493
+- BLEU-1 Score: 0.5607
