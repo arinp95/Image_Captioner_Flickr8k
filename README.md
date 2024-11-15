@@ -18,6 +18,7 @@ The model is trained and evaluated using the Flickr8k dataset, which contains 8,
 
 ### Model Architecture
 The model consists of the following two primary components:
+
 ResNet50: 
 - Pre-trained on the ImageNet dataset, ResNet50 is used to extract features from the input images.
 - The output of ResNet50 is a high-dimensional feature vector that represents the visual information within an image.
