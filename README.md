@@ -7,14 +7,14 @@ https://www.kaggle.com/datasets/adityajn105/flickr8k
 
 ## Packages required to run the project:
 
-tensorflow (for model building and training)
-keras (for deep learning functionalities)
-numpy (for numerical operations)
-pandas (for data handling)
-matplotlib (for plotting and visualizations)
-PIL or Pillow (for image processing)
-h5py (for saving model weights)
-scikit-learn (for splitting the dataset)
+- tensorflow (for model building and training)
+- keras (for deep learning functionalities)
+- numpy (for numerical operations)
+- pandas (for data handling)
+- matplotlib (for plotting and visualizations)
+- PIL or Pillow (for image processing)
+- h5py (for saving model weights)
+- scikit-learn (for splitting the dataset)
 
 ## Model Architecture
 The model consists of the following two primary components:
@@ -31,19 +31,19 @@ The entire system is trained end-to-end, meaning both ResNet50 and LSTM are fine
 
 ## Methodology for Image Captioning
 1. Data Preprocessing
-Extract image features
-Text preprocessing
-Train-Test split
-Data generator
+- Extract image features
+- Text preprocessing
+- Train-Test split
+- Data generator
 2. Encoder-Decoder Architecture
-Load VGG16 model
-Encoder : Image feature layer Sequence feature layer
-Decoder
+- Load Resnet50 model
+- Encoder : Image feature layer Sequence feature layer
+- Decoder
 3. Training & Optimization
-Training model
-Evaluation of model
+- Training model
+- Evaluation of model
 4. Frontend
-User interface using streamlit.
+- User interface using streamlit.
 ## Results:
-The Resnet50-LSTM model was trained for 20 epochs, achieving a low training loss of 2.5493.
-Evaluated the model using the BLEU score, with a focus on BLEU-1 score (0.560692).
+- The Resnet50-LSTM model was trained for 20 epochs, achieving a low training loss of 2.5493.
+- Evaluated the model using the BLEU score, with a focus on BLEU-1 score (0.560692).
