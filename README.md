@@ -23,7 +23,7 @@ ResNet50:
 - Pre-trained on the ImageNet dataset, ResNet50 is used to extract features from the input images.
 - The output of ResNet50 is a high-dimensional feature vector that represents the visual information within an image.
 
-![Resnet50](https://github.com/user-attachments/assets/5176860c-466c-49ac-a960-fc37f17a91bc)
+![0_tH9evuOFqk8F41FG](https://github.com/user-attachments/assets/3fed6300-22b3-4fd4-b2b0-9b820c044815)
 
 LSTM:
 - The image features extracted by ResNet50 are fed into an LSTM network.
