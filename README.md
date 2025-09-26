@@ -77,15 +77,15 @@ This project aims to bridge that gap by training a model that learns **visual–
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/image-captioning.git
-cd image-captioning
+git clone https://github.com/arinp95/Image_Captioner_Flickr8k.git
+cd Image_Captioner_Flickr8k
 ```
 
 ### 2. Create a Virtual Environment
 ```bash
 python -m venv venv
 source venv/bin/activate   # Linux/Mac
-venv\Scripts\activate    # Windows
+venv\Scripts\activate      # Windows
 ```
 
 ### 3. Install Dependencies
@@ -163,20 +163,6 @@ uvicorn app:app --reload
 ```
 
 Then navigate to http://127.0.0.1:8000 in your browser.
-You can also access the interactive API docs at:
-
-Swagger UI: http://127.0.0.1:8000/docs
-
-ReDoc: http://127.0.0.1:8000/redoc
-
----
-
-## 📦 Dependencies
-
-To install all dependencies:
-```bash
-pip install -r requirements.txt
-```
 
 ---
 
