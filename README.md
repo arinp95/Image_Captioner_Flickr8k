@@ -1,118 +1,3 @@
-# 🧠 Image Caption Generator using ResNet50 and LSTM
-
-This project is an end-to-end deep learning solution that automatically generates natural language descriptions for images. It integrates a powerful feature extractor (DenseNet201) with a language modeling component (LSTM), trained on the **Flickr30k** dataset. The final model is deployed using a **Flask** web app for real-time image captioning.
-
----
-
-## 📂 Project Structure
-```
-.
-├── static/                   # Static assets (CSS, JS, images, etc.)
-├── templates/                # HTML templates for the web app
-├── .gitignore                # Git ignore rules
-├── 01-data-preparation-8k.ipynb    # Data preprocessing notebook
-├── 02-model-training-8k.ipynb      # Model training notebook
-├── 03-model-evaluation-8k.ipynb    # Model evaluation notebook
-├── app.py                    # Main FastAPI/Flask app script
-├── caption_model.weights.h5  # Trained model weights (HDF5 format)
-├── captions.pkl              # Preprocessed captions data
-├── config.pkl                # Configuration parameters
-├── features.pkl              # Extracted image features
-├── generate_captions.py      # Script to generate captions from images
-├── history.pkl               # Training history (loss/accuracy)
-├── model.keras               # Saved Keras model
-├── requirements.txt          # Python dependencies
-├── test.pkl                  # Test dataset
-└── tokenizer.pkl             # Tokenizer for text preprocessing
-
-```
-
----
-
-## 🧠 Model Architecture
-
-### 🔹 Encoder (Feature Extractor)
-- Pretrained **ResNet50** from Keras Applications
-- Global Average Pooling applied to last convolutional layer output
-
-### 🔹 Decoder (Language Generator)
-- Embedding Layer initialized randomly
-- LSTM Layer with 256 hidden units
-- Dense Layer with ReLU followed by Softmax over vocabulary
-
-The model is trained to predict the next word given the image embedding and previously generated words.
-
----
-
-## 📈 Evaluation Metrics
-Model performance is evaluated using BLEU-n metrics over a held-out validation set:
-```
-BLEU-1: 0.65
-BLEU-2: 0.40
-```
-> Scores were calculated using 5 reference captions per image with NLTK’s BLEU implementation and smoothing function.
-
----
-
-## 🌐 Deployment with Flask
-
-A simple web UI is included for testing the model by uploading an image.
-
-### Features
-- Upload any image from your device
-- Automatically view the predicted caption
-
-### Run the App Locally
-```bash
-# Step 1: Set up environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Step 2: Install dependencies
-pip install -r requirements.txt
-
-# Step 3: Launch app
-python app.py
-```
-
-Then navigate to `http://127.0.0.1:5000` in your browser.
-
----
-
-## 📦 Dependencies
-- `tensorflow`
-- `flask`
-- `numpy`, `pandas`, `matplotlib`, `Pillow`
-- `nltk`, `tqdm`
-
-To install all dependencies:
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## 🗃️ Dataset
-- [Flickr30k Dataset](https://www.kaggle.com/datasets/eeshawn/flickr30k)
-
----
-
-## 👤 Author
-**Arindam Phatowali**  
-B.Tech + M.Tech (Mathematics & Data Science), MANIT Bhopal
-
----
-
-## 📬 Contact & Links
-📧 Email: arindamphatowali@gmail.com  
-🐍 GitHub: [github.com/arinp95](https://github.com/arinp95)
-
----
-
-## ⭐ Like this project?
-Please consider starring ⭐ the repository to show your support and help others discover it!
-
-
 # 🖼️ Image Captioning with ResNet50 + LSTM
 
 This project explores how **deep learning** can connect **computer vision** and **natural language processing** to describe images in natural language. The goal is simple but powerful: **given an image, automatically generate a meaningful caption**.
@@ -167,23 +52,23 @@ This project aims to bridge that gap by training a model that learns **visual–
 
 ```
 .
-├── static/                   # Static assets (CSS, JS, uploaded images)
-├── templates/                # HTML templates for the web app
-├── .gitignore                 # Git ignore rules
+├── static/                         # Static assets (CSS, JS, uploaded images)
+├── templates/                      # HTML templates for the web app
+├── .gitignore                      # Git ignore rules
 ├── 01-data-preparation-8k.ipynb    # Preprocessing images & captions
 ├── 02-model-training-8k.ipynb      # Model architecture & training loop
 ├── 03-model-evaluation-8k.ipynb    # Caption evaluation & BLEU scoring
-├── app.py                     # FastAPI web server
-├── caption_model.weights.h5   # Trained model weights
-├── captions.pkl               # Preprocessed captions
-├── config.pkl                 # Config (max caption length, vocab size, etc.)
-├── features.pkl               # Precomputed image features
-├── generate_captions.py       # Core CaptionGenerator class (ResNet50 + LSTM)
-├── history.pkl                # Training history (loss/accuracy curves)
-├── model.keras                # Full Keras model (saved format)
-├── requirements.txt           # Project dependencies
-├── test.pkl                   # Test dataset
-└── tokenizer.pkl              # Tokenizer (word ↔ index mapping)
+├── app.py                          # FastAPI web server
+├── caption_model.weights.h5        # Trained model weights
+├── captions.pkl                    # Preprocessed captions
+├── config.pkl                      # Config (max caption length, vocab size, etc.)
+├── features.pkl                    # Precomputed image features
+├── generate_captions.py            # Core CaptionGenerator class (ResNet50 + LSTM)
+├── history.pkl                     # Training history (loss/accuracy curves)
+├── model.keras                     # Full Keras model (saved format)
+├── requirements.txt                # Project dependencies
+├── test.pkl                        # Test dataset
+└── tokenizer.pkl                   # Tokenizer (word ↔ index mapping)
 ```
 
 ---
@@ -248,24 +133,63 @@ http://127.0.0.1:8000
 - LSTM generates next word probabilities.
 - Dense layer maps outputs to vocabulary size.
 
-**Training Objective:**
-- **Categorical Cross-Entropy Loss** between predicted and true next words.
+---
+## 📈 Evaluation Metrics
+Model performance is evaluated using BLEU-n metrics over a held-out validation set:
+```
+BLEU-1: 0.65
+BLEU-2: 0.40
+```
+---
+## 🌐 Deployment with FastAPI
+
+A simple web UI is included for testing the model by uploading an image.
+
+### ✨ Features
+- 📤 Upload any image from your device  
+- 🖼️ Automatically view the predicted caption  
+
+### Run the App Locally
+```bash
+# Step 1: Set up environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Step 2: Install dependencies
+pip install -r requirements.txt
+
+# Step 3: Launch app
+uvicorn app:app --reload
+```
+
+Then navigate to http://127.0.0.1:8000 in your browser.
+You can also access the interactive API docs at:
+
+Swagger UI: http://127.0.0.1:8000/docs
+
+ReDoc: http://127.0.0.1:8000/redoc
+
+---
+
+## 📦 Dependencies
+
+To install all dependencies:
+```bash
+pip install -r requirements.txt
+```
 
 ---
 
 ## 📊 Example Results
 
-| Input Image | Generated Caption |
-|-------------|------------------|
-| ![dog](https://i.imgur.com/jxWqIBf.jpg) | "a dog running across a grassy field" |
-| ![kids](https://i.imgur.com/62Qp6uh.jpg) | "two children playing in the park" |
-| ![beach](https://i.imgur.com/E8mQl2O.jpg) | "people walking along the beach" |
+<img width="1920" height="1020" alt="Screenshot 2025-09-11 071057" src="https://github.com/user-attachments/assets/d943fed4-5139-4802-9116-e840a5f8e8ef" />
+
+<img width="1920" height="1020" alt="Screenshot 2025-09-11 071113" src="https://github.com/user-attachments/assets/9a01cf96-0219-4a80-a608-59c99238c955" />
 
 ---
 
 ## 🔮 Future Improvements
 
-- Use **beam search** instead of greedy decoding for more natural captions.
 - Replace LSTM with **Transformers** (e.g., attention-based decoders).
 - Train on larger datasets like **MS-COCO** for richer vocabulary.
 - Deploy on **Docker, Hugging Face Spaces, or AWS Lambda** for easier access.
@@ -277,6 +201,23 @@ http://127.0.0.1:8000
 - Dataset: [Flickr8k](https://github.com/jbrownlee/Datasets/releases/tag/Flickr8k)
 - Libraries: [TensorFlow/Keras](https://www.tensorflow.org/), [FastAPI](https://fastapi.tiangolo.com/)
 - Pretrained ResNet50 from [Keras Applications](https://keras.io/api/applications/).
+
+---
+
+## 👤 Author
+**Arindam Phatowali**  
+B.Tech + M.Tech (Mathematics & Data Science), MANIT Bhopal
+
+---
+
+## 📬 Contact & Links
+📧 Email: arindamphatowali@gmail.com  
+🐍 GitHub: [github.com/arinp95](https://github.com/arinp95)
+
+---
+
+## ⭐ Like this project?
+Please consider starring ⭐ the repository to show your support and help others discover it!
 
 ---
 
