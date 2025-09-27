@@ -192,7 +192,7 @@ Then navigate to http://127.0.0.1:8000 in your browser.
 
 ## 👤 Author
 **Arindam Phatowali**  
-5 Years Dual Degree - B.Tech + M.Tech (Mathematics & Data Science), MANIT Bhopal
+5 Years Dual Degree (B.Tech + M.Tech) - Mathematics & Data Science, MANIT Bhopal
 
 ---
 
